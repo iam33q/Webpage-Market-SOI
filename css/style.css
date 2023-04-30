@@ -1,0 +1,496 @@
+@import	url('./reset.css');
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,600,700,800|Poppins:400,500,600,700|Yellowtail&display=swap);
+@font-face {
+  font-family: CursiveScript;
+  src: url('./dancingscript-variablefont_wght.woff');
+}
+body {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 { 
+    /* Apparently, these rules are overriden by every single external CSS 
+    stylesheet, which makes no sense. The !important option is the only way 
+    I found to apply the rules below.*/
+    font-size: 3em !important;
+    font-family: Georgia, 'Times New Roman' !important;
+    font-weight: 100;
+    line-height: 3 !important;
+}    
+main {
+    display: inline;
+    position: relative;
+    box-sizing: border-box;
+    width: 75vw;
+    margin-left: 10vw;
+}
+/* Top Navigation */
+
+.top-navigation {
+    height:  60px;
+    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.social-media-icons, .search-wrapper{
+    max-height: 60px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    float: left;
+}
+.flag, .country-wrapper, .links, .telephone-wrapper {
+    max-height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    align-content: center;
+    float: right;
+}
+.links {
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.sm-icon {
+    font-size: 24px !important;
+    color: white;
+    align-self: center;
+    background-color: black;
+    padding: 13px;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    border-radius: 60px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: flex;
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+}
+.flag-image {
+    max-height: 60px;
+    border-radius: 50px;
+}
+#top-navigation-right, #top-navigation-left {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.fa-search {
+    font-size: 30px !important;
+    color: black;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.0);
+    padding: 10px;
+    border-radius: 90px;
+    line-height: 0.8 !important;
+}
+.fa-phone {
+    font-size: 30px !important;
+    color: black;
+    align-self: center;
+    line-height: 0.8 !important;
+    padding: 10px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#telephone-link-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#telephone-link-wrapper a {
+    color: white;
+}
+.links a {
+    color: white;
+    margin-left: 1vw;
+}
+#search {
+    align-self: center;
+    border-color: white;
+}
+.search-wrapper {
+    height: 45px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 35px;
+    border-color: orange;
+    align-self: center;
+}
+#country-select {
+    background-color: orange;    
+    color: white;
+    border-color: orange;
+}
+
+/* Main Navigation */
+
+
+.main-navigation, #main-navigation-right {
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+.main-navigation a {
+    margin-left: 2vw;
+    color: black;
+    font-weight: 600;
+}
+.main-navigation div:last-child a:last-child {
+    margin-right: 2vw;
+    height: 40px;
+    padding: 30px;
+    color: white;
+    font-weight: 100;
+    flex-shrink: 1;
+    font-stretch: semi-expanded;
+    background-color: darkorange;
+    border-radius: 60px;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Carousel*/
+#mycarousel {
+    background-color: rgb(110,127,126);    
+    height: 320px;
+    box-sizing: border-box;
+    font-family: serif;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+#mycarousel img {
+    display: flex;
+    margin-right: 8vw;
+    height: 360px;
+}
+#mycarousel div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center  ;
+}
+#mycarousel div div, button {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+#mycarousel div div:first-child {
+    margin-top: 30px;
+    font-family: 'CursiveScript';
+    font-size: 1.2em;
+    color: rgb(180,241,70);
+}
+#mycarousel div div:nth-child(2) {
+    font-family: 'Times New Roman';
+    font-size: 3.6em;
+    flex-wrap: wrap;
+    color: white;
+}
+#mycarousel div div:nth-child(3) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: rgb(180,241,70);
+}
+#mycarousel div button {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 140px;
+    margin: 1vw 0;
+    border-radius: 25px;
+    border-width: 0;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255,110,0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 12px rgb(83,95,95); 
+}
+.fake-carousel-links {
+    margin-top: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 25px;
+}
+.fake-carousel-links div {
+    margin-left: 12px;
+}
+#active-carousel-item {
+    color: darkorange;
+}
+.fake-carousel-links a {
+    color: rgb(110,127,126);
+}
+.fake-carousel-links a:hover {
+    text-decoration: none;
+}
+
+/* Shop By Category Section */
+.shop-by-category {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.shop-by-category div a {
+    display: flex;
+    height: auto;
+    width: 1vw;
+    margin: 1vw;
+    font-size: 2em;
+    font-weight: 100;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-content: center;
+    align-self: center;
+}
+.shop-by-category div:first-child, div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.shop-by-category section {
+    position: relative;
+    box-sizing: border-box;
+}
+.shop-by-category section {
+    margin-left: 1vw;
+}
+.shop-by-category img {
+    width: 22vw;
+    z-index: 0;
+}
+.shop-by-category section div {
+    display: block;
+    justify-content: center;
+    position: absolute;
+    top: 2vw;
+    left: 10vw;
+    z-index: 1;
+}
+.shop-by-category h2 {
+    font-family: Garamond;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px rgb(0,0,0);
+}
+.shop-by-category button {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 10vw;
+    margin: 1vw 0;
+    border-radius: 25px;
+    border-width: 0;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255,110,0);
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 5px rgb(83,95,95); 
+}
+
+
+/* Latest Products */
+#latest-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#latest-products nav {
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#latest-products nav a {
+    color: black;
+    margin: 1vw 10px;
+    font-family: Poppins, sans-serif;
+    line-height: 2;
+}
+#latest-products nav a:hover {
+    color: black;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-color: darkorange;
+    line-height: 2;
+}
+.card h3 {
+    line-height: 1;
+}
+.ratings {
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ratings .fa {
+    font-size: 1vw;
+    margin: 0px 2px 15px;
+
+}
+.card {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    width: 24vw;
+    margin-bottom: 1.5vw;
+}
+.card div:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 24vw;
+    height: 46vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.card div:nth-child(2):hover {
+    background-color: rgba(255,255,255,0.7);
+    height: 34vw;
+    z-index:3;
+}
+.card div img {
+    width: 6vw;
+    margin-bottom: 2vw;
+}
+.card div img:nth-child(1):hover {
+    content: url(./../images/cart-new.png);
+}
+.card div img:nth-child(2):hover {
+    content: url(./../images/view-new.png);
+}
+.card div img:nth-child(3):hover {
+    content: url(./../images/wishlist-new.png);
+}
+.card h3, h4 {
+    margin-top: 1vw;
+    align-self: center;
+    font-family: Poppins, sans-serif;
+}
+.card h4 span:first-child {
+    font-weight: 900;
+    margin-right: 10px;
+}
+.card h4 span:last-child {
+    font-weight: 100;
+    text-decoration: line-through;
+}
+#morebutton {
+    margin-top: ;
+    width: 75vw;
+    height: 10vw;
+    z-index: 5;
+    background-color: white;
+    justify-content: center;
+}
+#morebutton button {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 10vw;
+    margin: 1vw 0;
+    border-radius: 25px;
+    border-width: 0;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255,110,0);
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 5px rgb(83,95,95); 
+}
+#morebutton button:hover {
+    background-color: white;
+    color: darkorange;
+    border-color: lightgrey;
+}
+/*Footer*/
+footer div {
+    display: flex;
+    flex-direction: row;
+}
+footer section {
+    background-color: white;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+}
+.footer-list a {
+    color: black;
+    text-decoration: none;
+}
+.footer-list h6 {
+    font-weight: 900;
+}
+.footer-list:last-child {
+    margin-right: 2vw;
+}
+.social-media i {
+    margin-right: 1vw;
+}
+#subscribe-box{
+    display: flex;
+    flex-direction: row;
+}
+#subscribe-box input, #subscribe-box button {
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(240,240,240);
+}
+ #subscribe-box button {
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+ }
