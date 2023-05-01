@@ -25,6 +25,18 @@ main {
     width: 75vw;
     margin-left: 10vw;
 }
+/*Modal*/
+
+.modal, .modal-content {
+    border: 5px solid darkorange !important;
+}
+.modal-header, .modal-body, .modal-footer {
+    font-family: Poppins, sans-serif;
+}
+.modal-header {
+    margin-bottom: 10px;
+}
+
 /* Top Navigation */
 
 .top-navigation {
@@ -148,15 +160,15 @@ main {
     align-content: center;
     justify-content: space-between;
 }
-.main-navigation a {
+.main-navigation a, .main-navigation button {
     margin-left: 2vw;
     color: black;
     font-weight: 600;
 }
-.main-navigation div:last-child a:last-child {
+.main-navigation button {
     margin-right: 2vw;
-    height: 40px;
-    padding: 30px;
+    height: 60px;
+    padding-top: 15px;
     color: white;
     font-weight: 100;
     flex-shrink: 1;
