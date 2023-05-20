@@ -40,7 +40,11 @@ main {
 /* Top Navigation */
 
 .top-navigation {
+    position: fixed;
+    top: 0;
+    z-index: 99;
     height:  60px;
+    width: 100%;
     background-color: orange;
     display: flex;
     flex-direction: row;
@@ -88,9 +92,10 @@ main {
     align-content: center;
     justify-content: center;
 }
-.flag-image {
-    max-height: 60px;
-    border-radius: 50px;
+#flag-image {
+    max-height: 40px;
+    max-width: 80px;
+    border-radius: 40px;
 }
 #top-navigation-right, #top-navigation-left {
     display: flex;
@@ -152,6 +157,9 @@ main {
 /* Main Navigation */
 
 
+.main-navigation {
+    margin-top: 60px;
+}
 .main-navigation, #main-navigation-right {
     height: 150px;
     display: flex;
@@ -507,3 +515,21 @@ footer section {
     padding-left: 20px;
     padding-right: 20px;
  }
+ #scrollUp {
+    font-family: Poppins, sans-serif;
+    font-size: 2em;
+    height: 3em;
+    width: auto;
+    margin: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-content: flex-end;
+    justify-content: right;
+    float: right;
+}
+.fa-arrow-up:last-child {
+    font-size: 1.5em;
+    margin: 0 1vw;
+    align-self: end;
+}
