@@ -15,4 +15,15 @@ $(document).ready(function () {
 		});
 	});
 });
-
+function changeShow(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;	
+    var container = target.nextSibling.nextSibling;
+    if (container.style.display !== 'none'){
+    	container.style.display = "none";
+    	target.innerText = "Show";
+    } else { 
+    	container.style.display = 'flex';
+	    target.innerText = "Hide";
+    };
+}
