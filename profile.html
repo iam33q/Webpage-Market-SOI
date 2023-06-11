@@ -5,6 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <link rel="stylesheet" type="text/css" href="./css/style.css">
+	    <link rel="stylesheet" type="text/css" href="./css/style-profile.css">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <link rel="icon" type="image/png" href="images/flavicon.png">
 	    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity = "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin = "anonymous">
@@ -18,44 +19,12 @@
 		<title>Swag of India</title>
 	</head>
 	<body>
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <h5 class="container text-muted">You need to log in to use all our website's features.</h5>
-		      <div class="modal-body">
-				<form>
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Email address</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				  </div>
-				  <div class="form-group">
-				    <label for="exampleInputPassword1">Password</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-				  </div>
-				  <div class="form-group form-check">
-				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-				  </div>
-				  <button type="submit" class="btn btn-primary">Sign In</button>
-				</form>
-		      </div>
-              <div class="modal-footer">
-				<p>No account? </p><a class="Sign Up">Sign Up</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
 		<header id="main-header"></header>
 		<main>
 			<h1>User Profile</h1>
-			<form>
+			<h3>Your Details</h3>
+			<button class="SOI-button" onclick='changeShow(event)'>Show</button>
+			<form id="user-details-form">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
 			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -65,12 +34,86 @@
 			    <label for="exampleInputPassword1">Password</label>
 			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			  </div>
-			  <div class="form-check">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+			  <div class=" form-group">
+				  <label for="password-input">Re-Type Password</label>
+				  <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
+			  </div>					  
+			  <h3>Address</h3>
+			  <div class="form-group">
+			    <label for="street-name-input">Street Name</label>
+			    <input type="text" class="form-control" id="street-name-input" aria-describedby="emailHelp" placeholder="Street Name">
+			    <small id="emailHelp" class="form-text text-muted"></small>
 			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
+			  <div class="form-group">
+			    <label for="street-number-input">Street Number</label>
+			    <input type="text" class="form-control" id="street-number-input" placeholder="Street Number">
+			  </div>
+			  <div class="form-group">
+			    <label for="postal-code-input">Postal Code</label>
+			    <input type="text" class="form-control" id="postal-code-input" placeholder="Post Code">
+			  </div>
+			  <div class="form-group">
+			    <label for="province-input">County/Province</label>
+			    <input type="text" class="form-control" id="province-input" placeholder="County/Province">
+			  </div>
+			  <div class="form-group">
+			    <label for="country-input">Country</label>
+			    <input type="text" class="form-control" id="country-input" placeholder=" ">
+			  </div>					
+			  <h3>Card Details</h3>
+			  <div class="form-group">
+			    <label for="full-name-input">Full Name on Card</label>
+			    <input type="text" class="form-control" id="full-name-input" placeholder="Full Name">
+			  </div>
+			  <div class="form-group">
+			    <label for="card-number-input">Card Number</label>
+			    <input type="text" class="form-control" id="card-number-input" placeholder="XXXX-XXXX-XXXX-XXXX">
+			  </div>			  
+			  <div class="form-group">
+			    <label for="expiration-date-input">Expiration Date</label>
+			    <input type="text" class="form-control" id="expiration-date-input" placeholder="MM/YY">
+			  </div>
+
+			  <button type="submit" class="SOI-button">Submit Changes</button>
 			</form>
+			<h3>Your Cart</h3>
+			<button class="SOI-button" onclick='changeShow(event)'>Hide</button>
+			<div id="cart">
+		    	<section class="card">
+				    <img src="./images/product1.png">
+				    <h3>Chequered Shorts</h3>
+				    <h4>$22.00</h4>
+				</section>
+				<section class="card">
+				    <img src="./images/product2.png">
+				    <h3>Green Hoodie</h3>
+				    <h4>$40.00</h4>
+				</section>		    	
+				<section class="card">
+				    <img src="./images/product3.png">
+				    <h3>Yellow Sweater</h3>
+				    <h4><$30.00</h4>
+				</section>		    	
+			</div>
+			<h3>Your Previous Orders</h3>
+			<button class="SOI-button" onclick='changeShow(event)'>Hide</button>
+			<div id="previous-orders">
+		    	<section class="card">
+				    <img src="./images/product4.png">
+				    <h3>Turquoise Top</h3>
+				    <h4>$45.00</h4>
+				</section>
+				<section class="card">
+				    <img src="./images/product5.png">
+				    <h3>Tracksuit Trunks</h3>
+				    <h4>$20.00</h4>
+				</section>		    	
+				<section class="card">
+				    <img src="./images/product6.png">
+				    <h3>Womens' jacket</h3>
+				    <h4>$50.00</h4>
+				</section>		    	
+			</div>
 		</main>
 		<footer id="main-footer"></footer>
 	</body>

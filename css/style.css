@@ -19,9 +19,10 @@ h1 {
     line-height: 3 !important;
 }    
 main {
-    display: inline;
+    display: flex;
     position: relative;
     box-sizing: border-box;
+    height: 80%;
     width: 75vw;
     margin-left: 10vw;
 }
@@ -35,6 +36,13 @@ main {
 }
 .modal-header {
     margin-bottom: 10px;
+}
+.modal-body form {
+    height: 40vh !important;
+}
+.form-group input, label {
+    width: 100%;
+    flex-flow: column nowrap;
 }
 
 /* Top Navigation */
@@ -233,7 +241,7 @@ main {
     line-height: 1.5;
     color: rgb(180,241,70);
 }
-#mycarousel div button {
+#mycarousel div button, .SOI-button {
     display: flex;
     flex-wrap: wrap;
     height: 40px;
@@ -342,7 +350,7 @@ main {
 
 
 /* Latest Products */
-#latest-products {
+#latest-products, #cart {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -467,7 +475,9 @@ main {
     color: darkorange;
     border-color: lightgrey;
 }
+
 /*Footer*/
+
 footer div {
     display: flex;
     flex-direction: row;

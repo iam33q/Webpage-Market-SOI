@@ -1,0 +1,7 @@
+form {
+	display: none ;
+	flex-direction: column;
+}
+h3 {
+	line-height: 2 !important;
+}

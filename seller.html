@@ -5,6 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <link rel="stylesheet" type="text/css" href="./css/style.css">
+	    <link rel="stylesheet" type="text/css" href="./css/style-forms.css">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <link rel="icon" type="image/png" href="images/flavicon.png">
 	    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity = "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin = "anonymous">
@@ -18,59 +19,100 @@
 		<title>Swag of India</title>
 	</head>
 	<body>
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <h5 class="container text-muted">You need to log in to use all our website's features.</h5>
-		      <div class="modal-body">
-				<form>
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Email address</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				  </div>
-				  <div class="form-group">
-				    <label for="exampleInputPassword1">Password</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-				  </div>
-				  <div class="form-group form-check">
-				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-				  </div>
-				  <button type="submit" class="btn btn-primary">Sign In</button>
-				</form>
-		      </div>
-              <div class="modal-footer">
-				<p>No account? </p><a class="Sign Up">Sign Up</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
 		<header id="main-header"></header>
 		<main>
 			<h1>Seller Profile</h1>
-			<form>
-			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			  </div>
-			  <div class="form-check">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
-			</form>
+			<div id="form-area">
+				<form>
+					<div class="form-section">
+					  	<h4>General Information</h4>
+					  	<div class=" form-group">
+						    <label for="forename-input">Legal Forename(s)</label>
+						    <input type="text" class="form-control" id="forename-input" aria-describedby="emailHelp" placeholder="Enter Forename(s)">
+					  	</div>
+					  	<div class=" form-group">
+						    <label for="surname-input">Surname</label>
+						    <input type="text" class="form-control" id="surname-input" aria-describedby="emailHelp" placeholder="Enter Surname">
+					  	</div>				
+					  	<div class=" form-group">
+						    <label for="exampleInputEmail1">Email address</label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					  	</div>
+					  	<div class=" form-group">
+						    <label for="password-input">Password</label>
+						    <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
+					  	</div>
+					  	<div class=" form-group">
+						    <label for="password-input">Re-Type Password</label>
+						    <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
+					  	</div>					
+					</div>
+					<div class="form-section">
+					  <h4>Business Information</h4>
+					  <div class="form-group">
+					    <label for="business-name-input">Business Name</label>
+					    <input type="text" class="form-control" id="business-name-input" placeholder="Business Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="street-name-input">Street Name</label>
+					    <input type="text" class="form-control" id="street-name-input" aria-describedby="emailHelp" placeholder="Street Name">
+					    <small id="emailHelp" class="form-text text-muted"></small>
+					  </div>
+					  <div class="form-group">
+					    <label for="street-number-input">Street Number</label>
+					    <input type="text" class="form-control" id="street-number-input" placeholder="Street Number">
+					  </div>
+					  <div class="form-group">
+					    <label for="postal-code-input">Postal Code</label>
+					    <input type="text" class="form-control" id="postal-code-input" placeholder="Post Code">
+					  </div>
+					  <div class="form-group">
+					    <label for="province-input">County/Province</label>
+					    <input type="text" class="form-control" id="province-input" placeholder="County/Province">
+					  </div>
+					  <div class="form-group">
+					    <label for="country-input">Country</label>
+					    <input type="text" class="form-control" id="country-input" placeholder=" ">
+					  </div>					
+					</div>
+					<div class="form-section">
+					  <h4>Bank Account Details</h4>
+					  <div class="form-group">
+					    <label for="full-name-input">Full Name</label>
+					    <input type="text" class="form-control" id="-input" placeholder="">
+					  </div>
+					  <div class="form-group">
+					    <label for="account-number-input">Account Number</label>
+					    <input type="text" class="form-control" id="account-number-input" placeholder="1234 1234">
+					  </div>
+					  <div class="form-group">
+					    <label for="sort-code-input">Sort Code</label>
+					    <input type="text" class="form-control" id="sort-code-input" placeholder="45-67-89">
+					  </div>
+					  <div class="form-check">
+					    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+					    <label class="form-check-label" for="exampleCheck1">Banking Address same as Business Address</label>
+					  </div>						
+					</div>
+					<div class="form-section">
+					  <h4>Products</h4>
+					  <div class="form-group">
+					    <label for="sort-code-input">Product(s) Description</label>
+					    <textarea type="text" class="form-control" id="sort-code-input" placeholder="Enter your description here...."></textarea>
+					  </div>						
+					<button type="submit" class="btn btn-primary">Add Product</button>
+					</div>
+
+
+					<div class="form-section">
+						
+					</div>
+
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				
+			</div>
 		</main>
 		<footer id="main-footer"></footer>
 	</body>
