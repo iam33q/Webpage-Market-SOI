@@ -3,10 +3,9 @@ var countryPhones 	= {english:"+44 7123456789",india:"+91 8888888888",pakistan:"
 var imageUrls 		= {english: "english.webp",india:"india.png",pakistan:"pakistan.png"}
 $(document).ready(function () {
 	document.getElementById("country-select").addEventListener('change', function(){
-			var selection = document.getElementById("country-select").value; // Language dropdown value
-			document.getElementById("flag-image").src = `./images/${imageUrls[countryLanguages[selection]]}`; //
-			document.getElementById("telephone-link-wrapper").innerText = countryPhones[countryLanguages[selection]];
-		});
+		document.getElementById("flag-image").src = `./images/${imageUrls[countryLanguages[document.getElementById("country-select").value]]}`; //
+		document.getElementById("telephone-link-wrapper").innerText = countryPhones[countryLanguages[document.getElementById("country-select").value]];
+	});
 	document.getElementById("scrollUp").addEventListener("click", () => {
 		window.scroll({
 			top: 0,
@@ -17,13 +16,9 @@ $(document).ready(function () {
 });
 function changeShow(e) {
     e = e || window.event;
+    console.log(e);
     var target = e.target || e.srcElement;	
     var container = target.nextSibling.nextSibling;
-    if (container.style.display !== 'none'){
-    	container.style.display = "none";
-    	target.innerText = "Show";
-    } else { 
-    	container.style.display = 'flex';
-	    target.innerText = "Hide";
-    };
+    if (container.style.display !== 'none'){container.style.display = "none";target.innerText = "Show"} 
+    else { container.style.display = 'flex';target.innerText = "Hide"};
 }
