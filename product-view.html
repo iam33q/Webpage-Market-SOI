@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style-product-view.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="images/flavicon.png">
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity = "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin = "anonymous">
@@ -26,83 +27,90 @@
 			<li class="breadcrumb-item active">Product View</li>
 		</ol>
 	</nav>	
-	<h1>Product List</h1>
-	<section class="product">
-	    <img src="./images/product1.png">
-	    <h3>Chequered Shorts</h3>
-	    <h4><span>$22.00 </span><span>$30.00</span></h4>
-		<div class="stars">
-			<i class="gold fa fa-star checked"></i>
-			<i class="gold fa fa-star checked"></i>
-			<i class="gold fa fa-star checked"></i>
-			<i class="gold fa fa-star-o"></i>
-			<i class="gold fa fa-star-o"></i>
-		</div>	
-		<button>Add to Cart</button>
-		<button>Buy Now</button>
-		<h3>Customer Reviews</h3>
-		<div id="product-review">
-			<div id="review">Review 1</div>
-			<div id="review">Review 2</div>
-			<div id="review">Review 3</div>
-		</div>
-			<h1>Related Products:</h1>
-		<div id="related-products">
-		    <section id="latest-products">
-				<section class="card">
-				    <img src="./images/product2.png">
-				    <div>
-				        <img src="./images/cart.png">
-				        <img src="./images/view.png">
-				        <img src="./images/wishlist.png">
-				    </div>
-				    <h3>Green Hoodie</h3>
-				    <h4><span>$40.00 </span><span>$60.00</span></h4>
-				    <div class="ratings">
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				    </div>
-				</section>		    	
-				<section class="card">
-				    <img src="./images/product3.png">
-				    <div>
-				        <img src="./images/cart.png">
-				        <img src="./images/view.png">
-				        <img src="./images/wishlist.png">
-				    </div>
-				    <h3>Yellow Sweater</h3>
-				    <h4><span>$30.00 </span><span>$60.00</span></h4>
-				    <div class="ratings">
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				    </div>
-				</section>		    	
-				<section class="card">
-				    <img src="./images/product4.png">
-				    <div>
-				        <img src="./images/cart.png">
-				        <img src="./images/view.png">
-				        <img src="./images/wishlist.png">
-				    </div>
-				    <h3>Turquoise Top</h3>
-				    <h4><span>$45.00 </span><span>$70.00</span></h4>
-				    <div class="ratings">
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				        <i class="fa fa-star-o" aria-hidden="true"></i>
-				    </div>
-				</section>		    	
-		    </section>
-		</div>
-	</section>
+	<main>
+		<section class="product">
+			<div class="product-area">
+			    <img src="./images/product1.png">
+			    <div class="product-details">
+				    <h3>Chequered Shorts</h3>
+				    <h4><span>$22.00 </span><span>$30.00</span></h4>
+					<div class="stars">
+						<i class="gold fa fa-star checked"></i>
+						<i class="gold fa fa-star checked"></i>
+						<i class="gold fa fa-star checked"></i>
+						<i class="gold fa fa-star-o"></i>
+						<i class="gold fa fa-star-o"></i>
+					</div>	
+					<button>Add to Cart</button>
+					<button>Buy Now</button>
+			    </div>				
+			</div>
+
+			<h3>Customer Reviews</h3>
+			<div id="product-review">
+				<div class="review">Review 1</div>
+				<div class="review">Review 2</div>
+				<div class="review">Review 3</div>
+			</div>
+				<h1>Related Products:</h1>
+
+		</section>		
+			<div id="related-products">
+			    <section id="latest-products">
+					<section class="card">
+					    <img src="./images/product2.png">
+					    <div>
+					        <img src="./images/cart.png">
+					        <img src="./images/view.png">
+					        <img src="./images/wishlist.png">
+					    </div>
+					    <h3>Green Hoodie</h3>
+					    <h4><span>$40.00 </span><span>$60.00</span></h4>
+					    <div class="ratings">
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					    </div>
+					</section>		    	
+					<section class="card">
+					    <img src="./images/product3.png">
+					    <div>
+					        <img src="./images/cart.png">
+					        <img src="./images/view.png">
+					        <img src="./images/wishlist.png">
+					    </div>
+					    <h3>Yellow Sweater</h3>
+					    <h4><span>$30.00 </span><span>$60.00</span></h4>
+					    <div class="ratings">
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					    </div>
+					</section>		    	
+					<section class="card">
+					    <img src="./images/product4.png">
+					    <div>
+					        <img src="./images/cart.png">
+					        <img src="./images/view.png">
+					        <img src="./images/wishlist.png">
+					    </div>
+					    <h3>Turquoise Top</h3>
+					    <h4><span>$45.00 </span><span>$70.00</span></h4>
+					    <div class="ratings">
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					        <i class="fa fa-star-o" aria-hidden="true"></i>
+					    </div>
+					</section>		    	
+			    </section>
+			</div>	</main>
+
 </body>
 <footer id="main-footer"></footer>
 </body>
