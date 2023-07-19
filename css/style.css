@@ -399,12 +399,13 @@ main {
     margin-bottom: 1.5vw;
 }
 .card div:nth-child(2) {
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
     width: 24vw;
-    height: 46vw;
+    height: 34vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -414,8 +415,9 @@ main {
     overflow-x: hidden;
 }
 .card div:nth-child(2):hover {
+    opacity: 1;
+    display: flex;
     background-color: rgba(255,255,255,0.7);
-    height: 34vw;
     z-index:3;
 }
 .card div img {
