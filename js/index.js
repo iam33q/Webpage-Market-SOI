@@ -16,7 +16,6 @@ $(document).ready(function () {
 });
 function changeShow(e) {
     e = e || window.event;
-    console.log(e);
     var target = e.target || e.srcElement;	
     var container = target.nextSibling.nextSibling;
     if (container.style.display !== 'none'){container.style.display = "none";target.innerText = "Show"} 

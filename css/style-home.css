@@ -1,0 +1,164 @@
+h1 { 
+    /* Apparently, these rules are overriden by every single external CSS 
+    stylesheet, which makes no sense. The !important option is the only way 
+    I found to apply the rules below.*/
+    font-size: 3em !important;
+    font-family: Georgia, 'Times New Roman' !important;
+    font-weight: 100;
+    line-height: 3 !important;
+}    
+
+/*Carousel*/
+#mycarousel {
+    background-color: rgb(110,127,126);    
+    height: 320px;
+    box-sizing: border-box;
+    font-family: serif;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+#mycarousel img {
+    display: flex;
+    margin-right: 8vw;
+    height: 360px;
+}
+#mycarousel div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center  ;
+}
+#mycarousel div div, button {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+#mycarousel div div:first-child {
+    margin-top: 30px;
+    font-family: 'CursiveScript';
+    font-size: 1.2em;
+    color: rgb(180,241,70);
+}
+#mycarousel div div:nth-child(2) {
+    font-family: 'Times New Roman';
+    font-size: 3.6em;
+    flex-wrap: wrap;
+    color: white;
+}
+#mycarousel div div:nth-child(3) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: rgb(180,241,70);
+}
+#mycarousel div button, .SOI-button {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 140px;
+    margin: 1vw 0;
+    border-radius: 25px;
+    border-width: 0;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255,110,0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 12px rgb(83,95,95); 
+}
+.fake-carousel-links {
+    margin-top: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 25px;
+}
+.fake-carousel-links div {
+    margin-left: 12px;
+}
+#active-carousel-item {
+    color: darkorange;
+}
+.fake-carousel-links a {
+    color: rgb(110,127,126);
+}
+.fake-carousel-links a:hover {
+    text-decoration: none;
+}
+
+/* Shop By Category Section */
+.shop-by-category {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.shop-by-category div a {
+    display: flex;
+    height: auto;
+    width: 1vw;
+    margin: 1vw;
+    font-size: 2em;
+    font-weight: 100;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-content: center;
+    align-self: center;
+}
+.shop-by-category div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.shop-by-category section {
+    position: relative;
+    box-sizing: border-box;
+}
+.shop-by-category section {
+    margin-left: 1vw;
+}
+.shop-by-category img {
+    width: 22vw;
+    z-index: 0;
+}
+.shop-by-category section div {
+    display: block;
+    justify-content: center;
+    position: absolute;
+    top: 2vw;
+    left: 10vw;
+    z-index: 1;
+}
+.shop-by-category h2 {
+    font-family: Garamond;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px rgb(0,0,0);
+}
+.shop-by-category button {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 10vw;
+    margin: 1vw 0;
+    border-radius: 25px;
+    border-width: 0;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255,110,0);
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 5px rgb(83,95,95); 
+}
+div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}

@@ -1,6 +1,12 @@
 main {
 	margin: 0 10%;
 }
+h1 {
+	font-family: Poppins, sans-serif !important;
+	text-decoration: underline;
+	text-decoration-color: darkorange;
+	line-height: 1.2;
+}
 .breadcrumb {
 	background-color: white !important;
 }
@@ -11,7 +17,7 @@ main {
 .product-area {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 .product img {
 	margin: 0 2.5% 10%;
@@ -23,7 +29,14 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-content: flex-end;
-	justify-content: space-between !important;
+}
+#product-details span:last-child {
+	text-decoration: line-through;
+}
+#product-details span:first-child {
+	font-weight: 900;
+	text-decoration: underline;
+	text-decoration-color: darkorange;
 }
 #product-details button {
     display: flex;
@@ -42,4 +55,32 @@ main {
     font-size: 0.8em;
     font-weight: 900;
     box-shadow: 2px 2px 5px rgb(83,95,95); 
+}
+.product-review {
+	margin: 3vw;
+	display: flex;
+	flex-direction: column;
+	align-content: left;
+}
+.profile {
+	height: 5vw;
+	display: flex;
+/*	flex-shrink: 1;*/
+}
+.profile img {
+	margin: 0 1vw 0 0;
+ 	height: 5vw;
+ 	width: 5vw;
+}
+.profile div {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+.review-product-stars, .review-title, .review-body {
+	display: block;
+}
+.review-title {
+	font-weight: 900;
+	font-size: 1.5em;
 }
