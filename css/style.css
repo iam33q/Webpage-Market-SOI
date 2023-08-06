@@ -274,7 +274,7 @@ main {
 .card div img:nth-child(3):hover {
     content: url(./../images/wishlist-new.png);
 }
-.card h3, h4 {
+.card h3, .card h4 {
     margin-top: 1vw;
     align-self: center;
     font-family: Poppins, sans-serif;
