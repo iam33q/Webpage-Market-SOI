@@ -191,25 +191,25 @@ main {
 }
 
 /* Latest Products */
-#latest-products, #cart {
+.latest-products, #cart {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#latest-products nav {
+.latest-products nav {
     width: 75vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#latest-products nav a {
+.latest-products nav a {
     color: black;
     margin: 1vw 10px;
     font-family: Poppins, sans-serif;
     line-height: 2;
 }
-#latest-products nav a:hover {
+.latest-products nav a:hover {
     color: black;
     font-weight: 900;
     text-decoration: underline;
@@ -261,20 +261,23 @@ main {
     background-color: rgba(255,255,255,0.7);
     z-index:3;
 }
-.card div img {
-    width: 6vw;
+.hover-icons img, .hover-icons a {
+    width: 4vw;
+    height: 4vw;
+    max-width: 80px;
+    max-height: 80px;
     margin-bottom: 2vw;
 }
-.card div img:nth-child(1):hover {
+.hover-icons a:nth-child(1):hover {
     content: url(./../images/cart-new.png);
 }
-.card div img:nth-child(2):hover {
+.hover-icons a:nth-child(2):hover {
     content: url(./../images/view-new.png);
 }
-.card div img:nth-child(3):hover {
+.hover-icons a:nth-child(3):hover {
     content: url(./../images/wishlist-new.png);
 }
-.card h3, .card h4 {
+.card h3, .cardh 4 {
     margin-top: 1vw;
     align-self: center;
     font-family: Poppins, sans-serif;
