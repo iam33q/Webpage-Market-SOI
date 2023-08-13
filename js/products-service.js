@@ -56,9 +56,7 @@ let productsListUrl = {
     }
   ]};
 function loadProducts(productsListUrl) {
-	console.log("Loading JSON...")
 	const products = productsListUrl.Products;
-	console.log(productsListUrl);
 	let cards = '';
 	products.forEach(product => {
 	let isNewDiv = '';
@@ -79,10 +77,10 @@ function loadProducts(productsListUrl) {
 	cards = 
 	`<section class="prod-list-card" id="${product.id}" >
 	    <img class="prod-img" src="./images/${product.imageName}.png">
-	    <div>
-	        <img src="./images/cart.png">
-	        <img src="./images/view.png">
-	        <img src="./images/wishlist.png">
+	    <div class="hover-icons">
+	        <a href="./cart.html"><img src="./images/cart.png"></a>
+	        <a href="#"><img src="./images/view.png"></a>
+	        <a href="#"><img src="./images/wishlist.png"></a>
 	    </div>
 	    <div class="list-product-details">
 		    <h3>${isNewDiv}<a href="#">${product.name}</a></h3>
@@ -91,12 +89,12 @@ function loadProducts(productsListUrl) {
 		    <div class="prod-list-ratings">
 				${stars}
 		    </div>
-			<button>Add to Cart</button>
+			<button onclick="addToCart()">>Add to Cart</button>
 			<button>Buy Now</button>
 	    </div>
 	</section>
 	`;
 	document.querySelector('#productsListArea').innerHTML += cards;
-});
+	});
 };		
 loadProducts(productsListUrl);
