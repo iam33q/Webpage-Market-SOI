@@ -1,0 +1,4 @@
+#productsListArea {
+	display: flex;
+	flex-direction: column;
+}

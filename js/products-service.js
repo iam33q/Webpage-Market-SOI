@@ -55,15 +55,50 @@ let productsListUrl = {
       "ratings": "4.4"
     }
   ]};
-function loadProducts(productsListUrl) {
-	const products = productsListUrl.Products;
-	let cards = '';
+function addToCart(id){ //Loo
+  // Get cart items from localStorage
+  // use JSON.parse to convert the string into array
+  var card = document.getElementById(id);
+  var store = JSON.parse(localStorage.getItem('ProductsList'));
+  var products = store.Products;
+  // if product already exist, then icrement the quantity
+  // else push the product in the myCart array
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  products.forEach(prod => {
+    if(prod.id == id){
+      prod['Quantity']=1;
+      cart.Products[id]=prod;
+    }
+  });
+  localStorage.setItem('cart',JSON.stringify(cart));
+  // use JSON.stringify before pushing the myCart into localStorage
+  // save myCart in the localStorage
+  if(confirm("Product added to cart! Press OK to go to cart.")){
+    window.open("./cart.html");
+  }
+}
+function loadProductList(){
+  if(!localStorage.getItem('productsLoaded')){
+    localStorage.setItem('ProductsList',JSON.stringify(productsListUrl));
+    localStorage.setItem('cart', JSON.stringify({
+      'Products':{},
+      'Coupons':{}
+    }));
+    localStorage.setItem('productsLoaded',true);
+    console.log("Products loaded.");
+  }
+  console.log("Products list already present.");
+}
+function loadProducts(list) {
+	const products = JSON.parse(localStorage.getItem(list)).Products;
+	console.log(products);
+  let cards = '';
 	products.forEach(product => {
 	let isNewDiv = '';
 	if (product.isNew === 'TRUE') {
 	isNewDiv = `<div class="new-product">
-	<span><i class="fa fa-star checked"></i>New<i class="fa fa-star checked"></i></span>
-	</div>`;
+            	   <span><i class="fa fa-star checked"></i>New<i class="fa fa-star checked"></i></span>
+            	</div>`;
 	};
 	let stars = '';
 	const ratings = Math.floor(+product.ratings);
@@ -89,12 +124,14 @@ function loadProducts(productsListUrl) {
 		    <div class="prod-list-ratings">
 				${stars}
 		    </div>
-			<button onclick="addToCart()">>Add to Cart</button>
+			<button onclick="addToCart(${product.id})">>Add to Cart</button>
 			<button>Buy Now</button>
 	    </div>
 	</section>
-	`;
-	document.querySelector('#productsListArea').innerHTML += cards;
+	`
+;	document.querySelector('#productsListArea').innerHTML += cards;
 	});
 };		
-loadProducts(productsListUrl);
+loadProductList();
+//if(document.getElementById(productsListArea)) 
+loadProducts('ProductsList');
