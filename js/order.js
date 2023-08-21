@@ -7,6 +7,7 @@ function loadProducts(list) {
 	let totalproducts=0;
 	for(i of Object.keys(products)){
 		let product=products[i];
+		console.log(product);
 		if(product['Quantity'] == 0 ) continue;
 		totalprice += Number.parseInt(product['price'])*Number.parseInt(product['Quantity']);
 		totalpricediscounted += Number.parseInt(product['priceAfterDiscount'])*Number.parseInt(product['Quantity']);
@@ -39,29 +40,19 @@ function loadProducts(list) {
 				    <label for='update-cart-${product.id}'>Quantity:<input type="number" id='update-cart-${product.id}' value="${product.Quantity}"></label>
 			    </span>
 			    <span>
-						<button onclick="UpdateCart(${product.id})">Update Cart</button><!-- Insert 0 to delete entry -->
 			    </span>
 		    </div>
 		</section>`;
 		document.querySelector('#productsListArea').innerHTML += cards;
 	};
+	var shippingdate = new Date(Date.now()+1.21e9).toDateString();
+	document.querySelector('#shippingdate').innerHTML += shippingdate;
+	//shippingdate.getUTCMonth() +" "+shippingdate.getDay();
 	document.querySelector('#totalprice').innerHTML +="$"+Number.parseInt(totalprice).toFixed(2);
 	document.querySelector('#totalpricediscounted').innerHTML +="$"+Number.parseInt(totalpricediscounted).toFixed(2);
 	document.querySelector('#totaldiscount').innerHTML +="$"+(Number.parseInt(totalprice).toFixed(2)-Number.parseInt(totalpricediscounted).toFixed(2));
 	document.querySelector('#totalproducts').innerHTML += totalproducts;
 };	
-function UpdateCart(id){
-	var qty = document.querySelector(`#update-cart-${id}`).value;
-	var products = JSON.parse(localStorage.getItem('cart'));
-	var cart = products.Products; console.log(cart);
-	switch(qty){
-		case 0: delete cart[id]; break;
-		default: cart[id].Quantity = qty; break;
-	}
-  	localStorage.setItem('cart',JSON.stringify(products));
-  	alert("Cart Updated!")
-  	location.reload();
-}
 function loadProductList(){
   if(!localStorage.getItem('productsLoaded')){
     localStorage.setItem('cart', JSON.stringify({
@@ -73,16 +64,4 @@ function loadProductList(){
   }
   console.log("Products list already present.");
 }
-function placeOrder(){
-	alert("Your order has been placed! You will now be redirected.")
-	// re-route to home page / profile page
-	var cart = JSON.parse(localStorage.getItem('cart'));
-	localStorage.setItem('cart', JSON.stringify({
-      'Products':{},
-      'Coupons':{}
-    }));
-		localStorage.setItem('order', JSON.stringify(cart));
-	var win = window.open("./order.html");
-};
-loadProductList();
-loadProducts('cart');
+loadProducts('order');

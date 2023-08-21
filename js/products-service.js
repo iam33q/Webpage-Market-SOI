@@ -74,7 +74,7 @@ function addToCart(id){ //Loo
   // use JSON.stringify before pushing the myCart into localStorage
   // save myCart in the localStorage
   if(confirm("Product added to cart! Press OK to go to cart.")){
-    window.open("./cart.html");
+    window.open("./cart.html", '_self');
   }
 }
 function loadProductList(){
@@ -132,6 +132,7 @@ function loadProducts(list) {
 ;	document.querySelector('#productsListArea').innerHTML += cards;
 	});
 };		
+
 loadProductList();
 //if(document.getElementById(productsListArea)) 
 loadProducts('ProductsList');

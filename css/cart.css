@@ -1,4 +1,196 @@
+main {
+	display: inline;
+	flex-direction: row;
+}
+/*#prod-list {
+	width: 70%;
+}
+*//*List Items*/
 #productsListArea {
+	width: 60%;
 	display: flex;
 	flex-direction: column;
+	align-content: flex-start;
+}
+#checkout-box h2, #checkout-box h3, #checkout-box h4 {
+    font-family: Poppins, sans-serif;
+}
+#checkout-box {
+	margin: 0 5%;
+	padding: 10px;
+	width: 30%;
+	float: right;
+	display: flex;
+	flex-direction: column;
+	border-width: 5px;
+	border-color: darkorange;
+	border-style: solid;
+}
+#totaldiscount {
+	color: seagreen;
+	font-weight: 900;
+	text-shadow: 1px 1px 5px greenyellow;
+}
+#totalpricediscounted {
+	color: darkorange;
+	font-weight: 900;
+	text-shadow: 1px 1px 5px lightgray;
+
+}
+#checkout-box button {
+    flex-wrap: wrap;
+/*    min-width: 100px;*/
+    background-color: darkorange;
+    align-content: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    border-color: darkorange;
+    font-weight: 900;
+    color: white;
+}
+#coupons-button {
+	font-size: 80%;
+	padding: 2px;
+	min-width: 20%;
+	display: inline;
+	float: right;
+}
+#place-order-button {
+	padding: 4vh 0;
+    font-size: 2em;
+    height: 10vh;
+    width: 100%;
+}
+.list-product-details {
+	position: relative;
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+}
+.list-product-details h4 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+.list-product-details h4 div {
+	font-weight: 900;
+	text-decoration: underline ;
+	text-decoration-color: darkorange;
+}
+.list-product-details h4 span {
+	margin: 0 10px;
+	text-decoration: line-through;
+}
+.list-product-details h3 a {
+	text-decoration: none;
+	color: black;
+	font-family: Poppins, sans-serif;
+}
+.list-product-details span {
+	margin: 10px 5px 0 0;
+}
+.list-product-details input {
+	margin: 0 10px;
+	width: 3.5em;
+}
+.new-product {
+	color: darkorange;
+}
+.prod-list-card {
+    position: relative;
+	margin: 20px 0;
+	box-sizing: content-box;
+	border-radius: 10px;
+	border-color: darkorange;
+	border-width: 3px;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+    font-family: Poppins, sans-serif;}
+
+.prod-img, .prod-list-card div:nth-child(2) {
+	min-width: 200px;
+	min-height: 213px;
+	max-width: 250px;
+	max-height: 267px;
+}
+.prod-img {
+	width: 15vw;
+	height: 16vw;
+}
+.prod-list-card:hover {
+	border-style: solid;
+	padding: 7px;
+}
+.prod-list-card div:nth-child(2) {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 15vw;
+    height: 16vw;
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.prod-list-card div:nth-child(2):hover {
+    opacity: 1;
+    display: flex;
+    background-color: rgba(255,255,255,0.7);
+    z-index:3;
+}
+.hover-icons img, .hover-icons a {
+    width: 4vw;
+    height: 4vw;
+    max-width: 80px;
+    max-height: 80px;
+    margin-bottom: 2vw;
+}
+.hover-icons a:nth-child(1):hover {
+    content: url(./../images/cart-new.png);
+}
+.hover-icons a:nth-child(2):hover {
+    content: url(./../images/view-new.png);
+}
+.hover-icons a:nth-child(3):hover {
+    content: url(./../images/wishlist-new.png);
+}
+.prod-list-ratings {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: initial;
+}
+.list-product-details button {
+	display: inline;
+    flex-wrap: wrap;
+    height: 40px;
+    margin: 0 5px 0 0;
+    padding: 10px 0;
+    min-width: 100px;
+    width: 7vw;
+    border-radius: 25px;
+    border-width: 1px;
+    border-color: rgb(255,110,0);
+    align-content: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    font-weight: 900;
+    box-shadow: 2px 2px 5px rgb(32,32,32); 
+}
+.list-product-details button:first-of-type {
+    background-color: white;
+    color: darkorange;
+}
+.list-product-details button:last-of-type, aside button {
+    background-color: rgb(255,110,0);
+    color: white;
 }

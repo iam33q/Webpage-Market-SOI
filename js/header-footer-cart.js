@@ -1,38 +1,40 @@
 $(document).ready(function () {
-document.getElementById('main-header').innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Sign In</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <h5 class="container text-muted">You need to log in to use all our website's features.</h5>
-      <div class="modal-body">
-		<form>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Email address</label>
-		    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		  </div>
-		  <div class="form-group form-check">
-		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-		  </div>
-		  <button type="submit" class="btn btn-primary">Sign In</button>
-		</form>
-      </div>
-      <div class="modal-footer">
-		<p>No account? </p><a class="Sign Up">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div>
+document.querySelector('body').innerHTML = 
+`<div class="modal fade" id="PaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h3 class="modal-title" id="exampleModalLabel">Payment Confirmation</h3>
+	      </div>
+	      <div class="modal-body">
+					<form>
+					  <div class="form-group">
+					    <label for="full-name-input">Full Name</label>
+					    <input type="text" class="form-control" id="full-name-input" placeholder="Enter Your Full Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputCardNumber">Card Number</label>
+					    <input type="text" class="form-control" id="inputCardNumber" aria-describedby="emailHelp" placeholder="Card No.">
+					  </div>
+					  <div class="form-group">
+					    <label for="cvv-input">CVV</label>
+					    <input type="text" class="form-control" id="cvv-input" placeholder="CVV">
+					  </div>
+					  <div class="form-group">
+					    <label for="expiration-date-input"></label>
+					    <input type="date" class="form-control" id="expiration-date-input" placeholder="Password">
+					  </div><hr>
+				  	<div class=" form-group">
+					    <label for="password-input">Password</label>
+					    <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
+				  	</div>
+					  <button type="submit" class="btn btn-primary" onclick="placeOrder()">Pay Now</button>
+					</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>` + document.querySelector('body').innerHTML;
+document.getElementById('main-header').innerHTML = `
 <header>
 	<header>	
         <nav class="top-navigation">
@@ -88,9 +90,6 @@ document.getElementById('main-header').innerHTML = `<div class="modal fade" id="
 		<div id="main-navigation-right">
 			<a href="./wishlist.html"><img src="./images/wishlist-new.png"></a>
     		<a href="./cart.html"><img src="./images/cart-new.png"></a>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			  Sign In
-			</button>
 		</div>
 	</nav>
 </header>`;
