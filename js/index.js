@@ -21,3 +21,19 @@ function changeShow(e) {
     if (container.style.display !== 'none'){container.style.display = "none";target.innerText = "Show"} 
     else { container.style.display = 'flex';target.innerText = "Hide"};
 }
+function addToWishlist() {
+	console.log("Wishlisted!");
+}
+function loadProductList(){
+  if(!localStorage.getItem('productsLoaded')){
+    localStorage.setItem('cart', JSON.stringify({
+      'Products':{},
+      'Coupons':{},
+    }));
+    localStorage.setItem('PreviousOrders','{}');
+    localStorage.setItem('productsLoaded',true);
+    console.log("Products loaded.");
+  }
+  console.log("Products list already present.");
+}
+loadProductList();

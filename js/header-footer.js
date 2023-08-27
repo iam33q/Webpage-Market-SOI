@@ -80,7 +80,7 @@ document.getElementById('main-header').innerHTML = `<div class="modal fade" id="
     		<a href="./index.html"><img src="./images/logo.png"></a>
     		<a href="./index.html">Home</a>
     		<a href="./categories.html">Categories</a>
-    		<a href="./latest.html">Latest</a>
+    		<a href="./product-list.html">Latest</a>
     		<a href="./blog.html">Blog</a>
     		<a href="./pages.html">Pages</a>
     		<a href="./contact.html">Contact</a>            			

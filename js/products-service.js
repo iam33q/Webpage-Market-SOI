@@ -84,6 +84,7 @@ function loadProductList(){
       'Products':{},
       'Coupons':{}
     }));
+    localStorage.setItem('')
     localStorage.setItem('productsLoaded',true);
     console.log("Products loaded.");
   }
@@ -115,7 +116,7 @@ function loadProducts(list) {
 	    <div class="hover-icons">
 	        <a href="./cart.html"><img src="./images/cart.png"></a>
 	        <a href="#"><img src="./images/view.png"></a>
-	        <a href="#"><img src="./images/wishlist.png"></a>
+	        <a href="./cart.html"><img src="./images/wishlist.png"></a>
 	    </div>
 	    <div class="list-product-details">
 		    <h3>${isNewDiv}<a href="#">${product.name}</a></h3>
@@ -125,6 +126,7 @@ function loadProducts(list) {
 				${stars}
 		    </div>
 			<button onclick="addToCart(${product.id})">>Add to Cart</button>
+      <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
 			<button>Buy Now</button>
 	    </div>
 	</section>

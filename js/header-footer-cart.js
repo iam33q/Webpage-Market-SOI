@@ -21,7 +21,7 @@ document.querySelector('body').innerHTML =
 					    <input type="text" class="form-control" id="cvv-input" placeholder="CVV">
 					  </div>
 					  <div class="form-group">
-					    <label for="expiration-date-input"></label>
+					    <label for="expiration-date-input">Card Expiration Date</label>
 					    <input type="date" class="form-control" id="expiration-date-input" placeholder="Password">
 					  </div><hr>
 				  	<div class=" form-group">

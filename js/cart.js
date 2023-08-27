@@ -20,13 +20,13 @@ function loadProducts(list) {
 			} else {
 			stars = stars + '<i class="fa fa-star-o"></i>';
 			}};
-		cards = 
+		cards += 
 		`<section class="prod-list-card" id="${product.id}" >
 		    <img class="prod-img" src="./images/${product.imageName}.png">
 		    <div class="hover-icons">
 		        <a href="./cart.html"><img src="./images/cart.png"></a>
 		        <a href="#"><img src="./images/view.png"></a>
-		        <a href="#"><img src="./images/wishlist.png"></a>
+		        <a href="./cart.html"><img src="./images/wishlist.png"></a>
 		    </div>
 		    <div class="list-product-details">
 			    <h3><a href="#">${product.name}</a></h3>
@@ -41,6 +41,7 @@ function loadProducts(list) {
 			    <span>
 						<button onclick="UpdateCart(${product.id})">Update Cart</button><!-- Insert 0 to delete entry -->
 			    </span>
+			    <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
 		    </div>
 		</section>`;
 		document.querySelector('#productsListArea').innerHTML += cards;
@@ -52,6 +53,7 @@ function loadProducts(list) {
 };	
 function UpdateCart(id){
 	var qty = document.querySelector(`#update-cart-${id}`).value;
+	console.log(qty);
 	var products = JSON.parse(localStorage.getItem('cart'));
 	var cart = products.Products; console.log(cart);
 	switch(qty){
@@ -62,26 +64,17 @@ function UpdateCart(id){
   	alert("Cart Updated!")
   	location.reload();
 }
-function loadProductList(){
-  if(!localStorage.getItem('productsLoaded')){
-    localStorage.setItem('cart', JSON.stringify({
-      'Products':{},
-      'Coupons':{}
-    }));
-    localStorage.setItem('productsLoaded',true);
-    console.log("Products loaded.");
-  }
-  console.log("Products list already present.");
-}
+
 function placeOrder(){
 	alert("Your order has been placed! You will now be redirected.")
-	// re-route to home page / profile page
 	var cart = JSON.parse(localStorage.getItem('cart'));
+	var orders = JSON.parse(localStorage.getItem('PreviousOrders'));
+	orders[new Date(Date.now().getMilliseconds()).toString()]=cart; // UNIX date used as order ID because it's pretty unique
 	localStorage.setItem('cart', JSON.stringify({
       'Products':{},
-      'Coupons':{}
+      'Coupons':{},
     }));
-		localStorage.setItem('order', JSON.stringify(cart));
+		localStorage.setItem('PreviousOrders', JSON.stringify(orders));
 	var win = window.open("./order.html");
 };
 loadProductList();
