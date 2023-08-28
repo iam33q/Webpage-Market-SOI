@@ -81,3 +81,4 @@ function loadProducts(list) {
 	document.querySelector('#totalproducts').innerHTML += totalproducts;
 };	
 loadProducts('PreviousOrders');
+console.log(JSON.parse(localStorage.getItem('cart')));

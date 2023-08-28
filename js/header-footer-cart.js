@@ -28,7 +28,7 @@ document.querySelector('body').innerHTML =
 					    <label for="password-input">Password</label>
 					    <input type="password" class="form-control" id="password-input" placeholder="Enter Password">
 				  	</div>
-					  <button type="submit" class="btn btn-primary" onclick="placeOrder()">Pay Now</button>
+					  <button class="btn btn-primary" onclick="placeOrder()">Pay Now</button>
 					</form>
 	      </div>
 	    </div>

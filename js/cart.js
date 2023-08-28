@@ -57,6 +57,9 @@ function UpdateCart(id){
 	console.log(qty);
 	var products = JSON.parse(localStorage.getItem('cart'));
 	var cart = products.Products; console.log(cart);
+	setTimeout(function() {
+		// body
+	}, 0)
 	switch(qty){
 		case 0: delete cart[id]; break;
 		default: cart[id].Quantity = qty; break;
@@ -65,18 +68,19 @@ function UpdateCart(id){
   	alert("Cart Updated!")
   	location.reload();
 }
-
 function placeOrder(){
-	alert("Your order has been placed! You will now be redirected.")
-	var cart = JSON.parse(localStorage.getItem('cart'));
-	var orders = JSON.parse(localStorage.getItem('PreviousOrders'));
-	orders[new Date(Date.now().getMilliseconds()).toString()]=cart; // UNIX date used as order ID because it's pretty unique
-	localStorage.setItem('cart', JSON.stringify({
-      'Products':{},
-      'Coupons':{},
-    }));
+	setTimeout(function() {
+		var cart = JSON.parse(localStorage.getItem('cart'));
+		var orders = JSON.parse(localStorage.getItem('PreviousOrders'));
+		console.log('does this even exist')
+		orders[new Date(Date.now().getMilliseconds()).toString()]=cart; 
+		localStorage.setItem('cart', JSON.stringify({
+	      'Products':{},
+	      'Coupons':{}
+	    }));
 		localStorage.setItem('PreviousOrders', JSON.stringify(orders));
-	var win = window.open("./order.html");
+		window.open("./order.html","_self");
+	}, 0) // Apparently shifting this code in the callback stack ensures that it actually executes.
+	alert("Your order has been placed! You will now be redirected.");
 };
-loadProductList();
 loadProducts('cart');
