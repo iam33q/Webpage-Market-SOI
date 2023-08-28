@@ -6,6 +6,7 @@ function loadProducts(list) {
 	let totalpricediscounted = 0;
 	let totalproducts=0;
 	for(i of Object.keys(products)){
+		console.log(products[i]);
 		let product=products[i];
 		if(product['Quantity'] == 0 ) continue;
 		totalprice += Number.parseInt(product['price'])*Number.parseInt(product['Quantity']);
@@ -19,7 +20,7 @@ function loadProducts(list) {
 			stars = stars + '<i class="fa fa-star checked"></i>';
 			} else {
 			stars = stars + '<i class="fa fa-star-o"></i>';
-			}};
+		}};
 		cards += 
 		`<section class="prod-list-card" id="${product.id}" >
 		    <img class="prod-img" src="./images/${product.imageName}.png">
@@ -39,13 +40,13 @@ function loadProducts(list) {
 				    <label for='update-cart-${product.id}'>Quantity:<input type="number" id='update-cart-${product.id}' value="${product.Quantity}"></label>
 			    </span>
 			    <span>
-						<button onclick="UpdateCart(${product.id})">Update Cart</button><!-- Insert 0 to delete entry -->
+					<button onclick="UpdateCart(${product.id})">Update Cart</button><!-- Insert 0 to delete entry -->
 			    </span>
 			    <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
 		    </div>
 		</section>`;
-		document.querySelector('#productsListArea').innerHTML += cards;
 	};
+	document.querySelector('#productsListArea').innerHTML += cards;
 	document.querySelector('#totalprice').innerHTML +="$"+Number.parseInt(totalprice).toFixed(2);
 	document.querySelector('#totalpricediscounted').innerHTML +="$"+Number.parseInt(totalpricediscounted).toFixed(2);
 	document.querySelector('#totaldiscount').innerHTML +="$"+(Number.parseInt(totalprice).toFixed(2)-Number.parseInt(totalpricediscounted).toFixed(2));

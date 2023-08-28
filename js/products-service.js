@@ -77,21 +77,21 @@ function addToCart(id){ //Loo
     window.open("./cart.html", '_self');
   }
 }
-function loadProductList(){
+function loadProductLists(){
+  localStorage.setItem('ProductsList',JSON.stringify(productsListUrl));
   if(!localStorage.getItem('productsLoaded')){
-    localStorage.setItem('ProductsList',JSON.stringify(productsListUrl));
     localStorage.setItem('cart', JSON.stringify({
       'Products':{},
       'Coupons':{}
     }));
-    localStorage.setItem('')
+    localStorage.setItem('PreviousOrders','{}');
     localStorage.setItem('productsLoaded',true);
     console.log("Products loaded.");
   }
-  console.log("Products list already present.");
+  else console.log("Products list already present.");
 }
 function loadProducts(list) {
-	const products = JSON.parse(localStorage.getItem(list)).Products;
+  const products = JSON.parse(localStorage.getItem(list)).Products;
 	console.log(products);
   let cards = '';
 	products.forEach(product => {
@@ -135,6 +135,6 @@ function loadProducts(list) {
 	});
 };		
 
-loadProductList();
+loadProductLists();
 //if(document.getElementById(productsListArea)) 
 loadProducts('ProductsList');
