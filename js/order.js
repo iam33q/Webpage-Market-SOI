@@ -1,13 +1,18 @@
+let cards = '';
+let totalprice = 0;
+let totalpricediscounted = 0;
+let totalproducts=0;
 function loadProducts(list) {
 	var storage = JSON.parse(localStorage.getItem(list));
+	var shippingdate = new Date(Date.now()+1.21e9).toDateString();
 	for(j of Object.keys(storage)){ // Apparently regular JS objects are not iterable, but the keys method output is. The more you know.
+		document.querySelector('#productsListArea').innerHTML += `<div class='orderContainer' id="order-${j}"></div>`
 		var order=storage[j]; 
 		var products = order.Products;
-		let cards = '';
-		let totalprice = 0;
-		let totalpricediscounted = 0;
-		let totalproducts=0;
-		let orderhtml = '';
+		cards = '';
+		totalprice = 0;
+		totalpricediscounted = 0;
+		totalproducts=0;
 		for(i of Object.keys(products)){
 			let product = products[i];
 			if(product['Quantity'] == 0 ) continue;
@@ -47,38 +52,31 @@ function loadProducts(list) {
 			    </div>
 			</section>`;
 		}
-		document.querySelector('#productsListArea').innerHTML += 
-		`<div class='orderContainer' id="order-${j}">
-			<hr>
-			<div id='checkout-box'>			
-				<div>
-					<h3>Estimated Shipping Date: </h3>				
-					<h3 id='shippingdate'></h3>				
-					<hr>
-					<h2>Price Details:</h2>
-					<hr>
-					<h3 id='totalprice-${j}'>Total: $${totalprice}</h3>
-					<h3 id='totaldiscount-${j}'>Discounted: $${totalpricediscounted}</h3>
-					<h3 id='coupondiscount-${j}'>Coupon Discount: $0</h3>
-					<hr>
-					<h3>Delivery Charge: Free</h3>
-					<h4 id='totalproducts-${j}'>Quantity: ${totalproducts}</h4>
-					<h3 id='totalpricediscounted-${j}'>Grand Total: $${totalpricediscounted}</h3>
-				</div>
-				<button id='place-order-button'></button>
+		document.getElementById('order-'+j).innerHTML += 
+		`
+		<h2>Order made on: ${new Date(Date.now()	).toDateString()}</h2>
+		<hr>
+		<div class='checkout-box'>			
+			<div>
+				<h3>Estimated Shipping Date: </h3>				
+				<h3 id='shippingdate'>${shippingdate}</h3>				
+				<hr>
+				<h2>Price Details:</h2>
+				<hr>
+				<h3 id='totalprice-${j}'>Total: $${Number.parseInt(totalprice).toFixed(2)}</h3>
+				<h3 id='totaldiscount-${j}'>Discounted: $${(Number.parseInt(totalprice).toFixed(2)-Number.parseInt(totalpricediscounted).toFixed(2))}</h3>
+				<h3 id='coupondiscount-${j}'>Coupon Discount: $0</h3>
+				<hr>
+				<h3>Delivery Charge: Free</h3>
+				<h4 id='totalproducts-${j}'>Quantity: ${totalproducts}</h4>
+				<h3 id='totalpricediscounted-${j}'>Grand Total: $${Number.parseInt(totalpricediscounted).toFixed(2)}</h3>
 			</div>
-			<div class='cards-${j}'>
-				${cards}
-			</div>
-			<hr>
-		</div>`;			
+		</div>
+		<div class='cards-${j}'>
+			${cards}
+		</div>
+		<hr>`;
 	};
-	var shippingdate = new Date(Date.now()+1.21e9).toDateString();
-	document.querySelector('#shippingdate').innerHTML += shippingdate;
-	document.querySelector('#totalprice').innerHTML +="$"+Number.parseInt(totalprice).toFixed(2);
-	document.querySelector('#totalpricediscounted').innerHTML +="$"+Number.parseInt(totalpricediscounted).toFixed(2);
-	document.querySelector('#totaldiscount').innerHTML +="$"+(Number.parseInt(totalprice).toFixed(2)-Number.parseInt(totalpricediscounted).toFixed(2));
-	document.querySelector('#totalproducts').innerHTML += totalproducts;
 };	
 loadProducts('PreviousOrders');
 console.log(JSON.parse(localStorage.getItem('cart')));

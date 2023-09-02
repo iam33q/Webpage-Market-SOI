@@ -9,3 +9,14 @@ main {
 .orderContainer{
 	width: 80%;
 }
+.checkout-box {
+	margin: 0 5%;
+	padding: 10px;
+	width: 30%;
+	float: right;
+	display: flex;
+	flex-direction: column;
+	border-width: 5px;
+	border-color: darkorange;
+	border-style: solid;
+}

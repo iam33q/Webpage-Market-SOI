@@ -1,4 +1,4 @@
-function addToCart(id){ //Loo
+function addToCart(id){ 
   var card = document.getElementById(id);
   var store = JSON.parse(localStorage.getItem('ProductsList'));
   var products = store.Products;
@@ -40,13 +40,14 @@ function loadProducts(list) {
 		    <div class="prod-list-ratings">
 				${stars}
 		    </div>
-			<button onclick="addToCart(${product.id})">Add to Cart</button>
-      <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
+			<button onclick="AddToList(${product.id}, 'cart')">Add to Cart</button>
+      <button onclick="AddToList(${product.id}, 'Wishlist')">Add to Wishlist</button>
 			<button>Buy Now</button>
 	    </div>
 	</section>
 	`
-;	document.querySelector('#productsListArea').innerHTML += cards;
+;	
+document.querySelector('#productsListArea').innerHTML += cards;
 	});
 };		
 loadProducts('ProductsList');

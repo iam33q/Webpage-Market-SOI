@@ -8,11 +8,7 @@ $(document).ready(function () {
 		document.getElementById("telephone-link-wrapper").innerText = countryPhones[countryLanguages[document.getElementById("country-select").value]];
 	});
 	document.getElementById("scrollUp").addEventListener("click", () => {
-		window.scroll({
-			top: 0,
-			left: 0,
-			behavior: "smooth",
-		});
+		window.scroll({top: 0,left: 0,behavior: "smooth",});
 	});
 });
 function changeShow(e) {
@@ -22,20 +18,42 @@ function changeShow(e) {
     if (container.style.display !== 'none'){container.style.display = "none";target.innerText = "Show"} 
     else { container.style.display = 'flex';target.innerText = "Hide"};
 }
-function addToWishlist() {
-	console.log("Wishlisted!");
+ function AddToList(id,list){
+  console.log("ID: "+id+"\nList: "+list);
+  var store = JSON.parse(localStorage.getItem('ProductsList'));
+  var prodlist = JSON.parse(localStorage.getItem(list));
+  var products = store.Products;
+  console.log(products);
+  products.forEach(prod => {
+    console.log(prod);
+    if(prod.id == id) {
+      prodlist.Products[id]=prod;
+      console.log("Product appended.")
+      localStorage.setItem(list,JSON.stringify(prodlist));
+      console.log(JSON.parse(localStorage.getItem(list)));
+      if(confirm("Product added! Press OK to go to "+list)){
+        if(list == 'cart') window.open("./cart.html", '_self');
+        else if (list == 'Wishlist') window.open("./wishlist.html", '_self');
+      }    
+    }    
+  });
+  console.log('Product not found.')
+ }
+function RemoveFromList(id,list){
+  var products = JSON.parse(localStorage.getItem(list));
+  delete products.Products[id];
+  localStorage.setItem(list,JSON.stringify(products));
+  if(confirm("Your "+list+" has been updated! Reload?")) location.reload();
 }
 function loadProductLists(){
   localStorage.setItem('ProductsList',JSON.stringify(productsListUrl));
   if(!localStorage.getItem('productsLoaded')){
-    localStorage.setItem('cart', JSON.stringify({
-      'Products':{},
-      'Coupons':{}
-    }));
+    localStorage.setItem('cart', JSON.stringify({'Products':{},'Coupons':{}}));
     localStorage.setItem('PreviousOrders','{}');
-    localStorage.setItem('Wishlist','{}');
+    localStorage.setItem('Wishlist',JSON.stringify({'Products':{}}));
     localStorage.setItem('productsLoaded',true);
     console.log("Products loaded.");
   }
-  else console.log("Products list already present.");
-}loadProductLists();
+  else console.log("Products list present.");
+}
+loadProductLists();

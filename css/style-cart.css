@@ -172,7 +172,7 @@ main {
 	display: inline;
     flex-wrap: wrap;
     height: 40px;
-    margin: 0 5px 0 0;
+    margin: 0 5px;
     padding: 10px 0;
     min-width: 100px;
     width: 7vw;
@@ -190,7 +190,7 @@ main {
     background-color: white;
     color: darkorange;
 }
-.list-product-details button:last-of-type, aside button {
+.list-product-details span button, aside button {
     background-color: rgb(255,110,0);
     color: white;
 }

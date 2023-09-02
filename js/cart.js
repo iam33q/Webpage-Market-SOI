@@ -8,7 +8,6 @@ function loadProducts(list) {
 	for(i of Object.keys(products)){
 		console.log(products[i]);
 		let product=products[i];
-		if(product['Quantity'] == 0 ) continue;
 		totalprice += Number.parseInt(product['price'])*Number.parseInt(product['Quantity']);
 		totalpricediscounted += Number.parseInt(product['priceAfterDiscount'])*Number.parseInt(product['Quantity']);
 		totalproducts += Number.parseInt(product['Quantity']);
@@ -21,7 +20,7 @@ function loadProducts(list) {
 			} else {
 			stars = stars + '<i class="fa fa-star-o"></i>';
 		}};
-		cards += 
+		document.querySelector('#productsListArea').innerHTML += 
 		`<section class="prod-list-card" id="${product.id}" >
 		    <img class="prod-img" src="./images/${product.imageName}.png">
 		    <div class="hover-icons">
@@ -37,34 +36,29 @@ function loadProducts(list) {
 					${stars}
 			    </div>
 			    <span>
-				    <label for='update-cart-${product.id}'>Quantity:<input type="number" id='update-cart-${product.id}' value="${product.Quantity}"></label>
+				    <label for='update-cart-${product.id}'>Quantity:<input type="number" id='update-cart-${product.id}' value="${product.Quantity}"><button onclick="UpdateCart(${product.id})">Update Cart</button></label>
+			    	
 			    </span>
 			    <span>
-					<button onclick="UpdateCart(${product.id})">Update Cart</button><!-- Insert 0 to delete entry -->
+					<button onclick="RemoveFromList(${product.id}, 'cart')">Remove From Cart</button>
+					<button onclick="AddToList(${product.id}, 'Wishlist')">Add to Wishlist</button>					
 			    </span>
-			    <button onclick="addToWishlist(${product.id})">Add to Wishlist</button>
 		    </div>
 		</section>`;
 	};
-	document.querySelector('#productsListArea').innerHTML += cards;
-	document.querySelector('#totalprice').innerHTML +="$"+Number.parseInt(totalprice).toFixed(2);
-	document.querySelector('#totalpricediscounted').innerHTML +="$"+Number.parseInt(totalpricediscounted).toFixed(2);
-	document.querySelector('#totaldiscount').innerHTML +="$"+(Number.parseInt(totalprice).toFixed(2)-Number.parseInt(totalpricediscounted).toFixed(2));
-	document.querySelector('#totalproducts').innerHTML += totalproducts;
+	document.getElementById('totalprice').innerText +="$"+ totalprice.toFixed(2);
+	document.getElementById('totaldiscount').innerText += Number.parseFloat(totalprice-totalpricediscounted).toFixed(2);
+	document.getElementById('totalproducts').innerText += totalproducts;
+	document.getElementById('totalpricediscounted').innerText += totalpricediscounted.toFixed(2);
 };	
 function UpdateCart(id){
 	var qty = document.querySelector(`#update-cart-${id}`).value;
-	console.log(qty);
+	console.log(id+"\n"+qty);
 	var products = JSON.parse(localStorage.getItem('cart'));
-	var cart = products.Products; console.log(cart);
-	setTimeout(function() {
-		// body
-	}, 0)
-	switch(qty){
-		case 0: delete cart[id]; break;
-		default: cart[id].Quantity = qty; break;
-	}
-  	localStorage.setItem('cart',JSON.stringify(products));
+	var cart = products.Products;
+	if(qty == 0) delete cart[id];
+	else cart[id].Quantity = qty; 
+	localStorage.setItem('cart',JSON.stringify(products));
   	alert("Cart Updated!")
   	location.reload();
 }
@@ -72,15 +66,14 @@ function placeOrder(){
 	setTimeout(function() {
 		var cart = JSON.parse(localStorage.getItem('cart'));
 		var orders = JSON.parse(localStorage.getItem('PreviousOrders'));
-		console.log('does this even exist')
-		orders[new Date(Date.now().getMilliseconds()).toString()]=cart; 
+		orders[new Date(Date.now()).toString()]=cart; // exact date and time is unique unless two orders are made within the same millisecond
 		localStorage.setItem('cart', JSON.stringify({
 	      'Products':{},
 	      'Coupons':{}
 	    }));
 		localStorage.setItem('PreviousOrders', JSON.stringify(orders));
 		window.open("./order.html","_self");
-	}, 0) // Apparently shifting this code in the callback stack ensures that it actually executes.
+	}, 0) // Shifting this code in the callback stack ensures that it actually executes.
 	alert("Your order has been placed! You will now be redirected.");
 };
 loadProducts('cart');
