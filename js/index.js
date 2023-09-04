@@ -18,7 +18,7 @@ function changeShow(e) {
     if (container.style.display !== 'none'){container.style.display = "none";target.innerText = "Show"} 
     else { container.style.display = 'flex';target.innerText = "Hide"};
 }
- function AddToList(id,list){
+function AddToList(id,list){
   console.log("ID: "+id+"\nList: "+list);
   var store = JSON.parse(localStorage.getItem('ProductsList'));
   var prodlist = JSON.parse(localStorage.getItem(list));
@@ -27,6 +27,7 @@ function changeShow(e) {
   products.forEach(prod => {
     console.log(prod);
     if(prod.id == id) {
+      prod['Quantity']=1;
       prodlist.Products[id]=prod;
       console.log("Product appended.")
       localStorage.setItem(list,JSON.stringify(prodlist));

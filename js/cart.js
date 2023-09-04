@@ -4,13 +4,15 @@ function loadProducts(list) {
 	let cards = '';
 	let totalprice = 0;
 	let totalpricediscounted = 0;
-	let totalproducts=0;
-	for(i of Object.keys(products)){
-		console.log(products[i]);
+	let totalproducts= 0;
+	for(i of Object.keys(products)){ // Apparently some objects are not iterable. 
 		let product=products[i];
-		totalprice += Number.parseInt(product['price'])*Number.parseInt(product['Quantity']);
-		totalpricediscounted += Number.parseInt(product['priceAfterDiscount'])*Number.parseInt(product['Quantity']);
-		totalproducts += Number.parseInt(product['Quantity']);
+		for(k of Object.keys(product)){console.log(k+":"+product[k])};
+		//console.log(Number.parseFloat(product['price'])+"*"+Number.parseFloat(product['Quantity']));
+		totalprice += Number.parseFloat(product['price'])*Number.parseFloat(product['Quantity']);
+		totalpricediscounted += Number.parseFloat(product['priceAfterDiscount'])*Number.parseFloat(product['Quantity']);
+		totalproducts += Number.parseFloat(product['Quantity']);
+		console.log("totalprice: "+totalprice+"\ntotalpricediscounted: "+totalpricediscounted+"\ntotalproducts: "+totalproducts);
 		let isNewDiv = '';
 		let stars = '';
 		const ratings = Math.floor(+product.ratings);
@@ -47,9 +49,9 @@ function loadProducts(list) {
 		</section>`;
 	};
 	document.getElementById('totalprice').innerText +="$"+ totalprice.toFixed(2);
-	document.getElementById('totaldiscount').innerText += Number.parseFloat(totalprice-totalpricediscounted).toFixed(2);
+	document.getElementById('totaldiscount').innerText +="$"+ Number.parseFloat(totalprice-totalpricediscounted).toFixed(2);
 	document.getElementById('totalproducts').innerText += totalproducts;
-	document.getElementById('totalpricediscounted').innerText += totalpricediscounted.toFixed(2);
+	document.getElementById('totalpricediscounted').innerText +="$"+ totalpricediscounted.toFixed(2);
 };	
 function UpdateCart(id){
 	var qty = document.querySelector(`#update-cart-${id}`).value;

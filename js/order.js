@@ -15,10 +15,9 @@ function loadProducts(list) {
 		totalproducts=0;
 		for(i of Object.keys(products)){
 			let product = products[i];
-			if(product['Quantity'] == 0 ) continue;
-			totalprice += Number.parseInt(product['price'])*Number.parseInt(product['Quantity']);
-			totalpricediscounted += Number.parseInt(product['priceAfterDiscount'])*Number.parseInt(product['Quantity']);
-			totalproducts += Number.parseInt(product['Quantity']);
+			totalprice += Number.parseFloat(product['price'])*Number.parseFloat(product['Quantity']);
+			totalpricediscounted += Number.parseFloat(product['priceAfterDiscount'])*Number.parseFloat(product['Quantity']);
+			totalproducts += Number.parseFloat(product['Quantity']);
 			console.log('Total Price: '+totalprice+'Total Discounted Price: '+totalpricediscounted+'Total Quantity: '+ totalproducts);
 			let isNewDiv = '';
 			let stars = '';
